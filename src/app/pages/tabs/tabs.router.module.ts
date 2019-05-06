@@ -26,6 +26,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab2/tab2.module#Tab2PageModule'
+          },
+          {
+            path: 'agregar/:listaId',
+            loadChildren: '../agregar/agregar.module#AgregarPageModule'
           }
         ]
       },
@@ -49,4 +53,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

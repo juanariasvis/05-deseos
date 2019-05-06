@@ -12,16 +12,21 @@ export class DeseosService {
     this.cargarStorage();
   }
 
-  crearLista( titulo: string) {
+  crearLista(titulo: string) {
     const nuevaLista = new Lista(titulo);
     this.listas.push(nuevaLista);
     this.guardarStorage();
     return nuevaLista.id;
   }
 
-  obtenerLista( id: string | number ) {
+  borrarLista(lista: Lista) {
+    this.listas = this.listas.filter(listaData => listaData.id !== lista.id);
+    this.guardarStorage();
+  }
+
+  obtenerLista(id: string | number) {
     id = Number(id);
-    return this.listas.find( listaData => listaData.id === id);
+    return this.listas.find(listaData => listaData.id === id);
   }
 
   guardarStorage() {
